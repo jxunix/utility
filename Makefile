@@ -6,13 +6,18 @@ VIMRC = ".vimrc"
 FTPLUGIN = "ftplugin"
 TEMPLATE = "template"
 INSTALL = "install.sh"
-DIR_VIMRC = "${HOME}"
 DIR_VIM = "${HOME}/.vim"
 ULTISNIPS = "bundle/ultisnips"
 SNIPPETS = "snippets"
 
+STARTUP = ".profile"
+ifeq (${OS}, linux)
+	${STARTUP} = ".bashrc"
+endif
+
 push:
-	cp ${DIR_VIMRC}/${VIMRC} ${OS}/
+	cp ${HOME}/${STARTUP} ${OS}/
+	cp ${HOME}/${VIMRC} ${OS}/
 	cp -r ${DIR_VIM}/${FTPLUGIN} ./
 	cp -r ${DIR_VIM}/${TEMPLATE} ./
 	cp -r ${DIR_VIM}/${ULTISNIPS}/${SNIPPETS} ./
@@ -22,7 +27,8 @@ push:
 
 pull:
 	git pull git@github.com:jxunix/utility.git
-	cp ${OS}/${VIMRC} ${DIR_VIMRC}
+	cp ${OS}/${STARTUP} ${HOME}
+	cp ${OS}/${VIMRC} ${HOME}
 	cp -r ${FTPLUGIN} ${DIR_VIM}/
 	cp -r ${TEMPLATE} ${DIR_VIM}/
 	cp -r ${SNIPPETS} ${DIR_VIM}/${ULTISNIPS}
