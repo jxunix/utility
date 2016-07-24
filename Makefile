@@ -1,43 +1,27 @@
 .PHONY: push pull install
 
 UNAME_S := $(shell uname -s)
+OS = `echo $(UNAME_S) | tr A-Z a-z`
+VIMRC = ".vimrc"
+FTPLUGIN = "ftplugin"
+TEMPLATE = "template"
+INSTALL = "install.sh"
+DIR_VIMRC = "${HOME}"
+DIR_VIM = "${HOME}/.vim"
 
 push:
-ifeq ($(UNAME_S),Linux)
-	cp -r ~/.vimrc linux/
-	cp -r ~/.vim/ftplugin linux/
-	cp -r ~/.vim/template linux/
+	cp ${DIR_VIMRC}/${VIMRC} ${OS}/
+	cp -r ${DIR_VIM}/${FTPLUGIN} ./
+	cp -r ${DIR_VIM}/${TEMPLATE} ./
 	git add -A
-	git commit -m 'sync'
+	git commit -m "sync"
 	git push origin master
-endif
-ifeq ($(UNAME_S),Darwin)
-	cp -R ~/.vimrc mac/
-	cp -R ~/.vim/ftplugin mac/
-	cp -R ~/.vim/template mac/
-	git add -A
-	git commit -m 'sync'
-	git push origin master
-endif
 
 pull:
-ifeq ($(UNAME_S),Linux)
-	git pull https://github.com/jxunix/utility
-	cp linux/.vimrc ~/
-	cp -r linux/ftplugin ~/.vim
-	cp -r linux/template ~/.vim
-endif
-ifeq ($(UNAME_S),Darwin)
-	git pull https://github.com/jxunix/utility
-	cp mac/.vimrc ~/
-	cp -R mac/ftplugin ~/.vim
-	cp -R mac/template ~/.vim
-endif
+	git pull git@github.com:jxunix/utility.git
+	cp ${OS}/${VIMRC} ${DIR_VIMRC}
+	cp -r ${FTPLUGIN} ${DIR_VIM}/
+	cp -r ${TEMPLATE} ${DIR_VIM}/
 
 install:
-ifeq ($(UNAME_S),Linux)
-	sudo sh ./mac/install.sh
-endif
-ifeq ($(UNAME_S),Darwin)
-	sudo sh ./linux/install.sh
-endif
+	sudo sh ./${OS}/${INSTALL}
