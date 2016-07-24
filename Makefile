@@ -11,7 +11,7 @@ ifeq ($(UNAME_S),Linux)
 	cp -r ~/.vim/template linux/
 	git add -A
 	git commit -m 'sync'
-	git push
+	git push origin master
 endif
 ifeq ($(UNAME_S),Darwin)
 	cp -R ~/.vimrc mac/
@@ -19,7 +19,7 @@ ifeq ($(UNAME_S),Darwin)
 	cp -R ~/.vim/template mac/
 	git add -A
 	git commit -m 'sync'
-	git push
+	git push origin master
 endif
 
 pull:
