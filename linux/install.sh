@@ -44,3 +44,20 @@ dnf install vim -y
 dnf install wqy-microhei-fonts -y
 
 dnf update -y
+
+ssh-keygen -t rsa -C "xnirvana508@gmail.com"
+# copy ssh key to github.com
+vim ~/.ssh/id_rsa.pub
+ssh -T git@github.com
+
+if [ ! -d "~/.vim" ]; then
+	mkdir ~/.vim
+fi
+cp -r ftplugin ~/.vim
+cp -r template ~/.vim
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/Valloric/YouCompleteMe ~/.vim/bundle/YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.py --clang-completer
