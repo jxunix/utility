@@ -23,23 +23,23 @@ ifeq ($(UNAME_S),Darwin)
 endif
 
 pull:
-	ifeq ($(UNAME_S),Linux)
-		git pull https://github.com/jxunix/utility
-		cp linux/.vimrc ~/
-		cp -r linux/ftplugin ~/.vim
-		cp -r linux/template ~/.vim
-	endif
-	ifeq ($(UNAME_S),Darwin)
-		git pull https://github.com/jxunix/utility
-		cp mac/.vimrc ~/
-		cp -R mac/ftplugin ~/.vim
-		cp -R mac/template ~/.vim
-	endif
+ifeq ($(UNAME_S),Linux)
+	git pull https://github.com/jxunix/utility
+	cp linux/.vimrc ~/
+	cp -r linux/ftplugin ~/.vim
+	cp -r linux/template ~/.vim
+endif
+ifeq ($(UNAME_S),Darwin)
+	git pull https://github.com/jxunix/utility
+	cp mac/.vimrc ~/
+	cp -R mac/ftplugin ~/.vim
+	cp -R mac/template ~/.vim
+endif
 
 install:
-	ifeq ($(UNAME_S),Linux)
-		sudo sh ./mac/install.sh
-	endif
-	ifeq ($(UNAME_S),Darwin)
-		sudo sh ./linux/install.sh
-	endif
+ifeq ($(UNAME_S),Linux)
+	sudo sh ./mac/install.sh
+endif
+ifeq ($(UNAME_S),Darwin)
+	sudo sh ./linux/install.sh
+endif
