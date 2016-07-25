@@ -12,7 +12,7 @@ brew cask install google-chrome
 brew cask install iterm2
 brew cask install mactex
 brew cask install macvim
-brew cask install moon
+brew cask install moom
 brew cask install skype
 
 brew tap homebrew/science
