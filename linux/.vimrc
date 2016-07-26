@@ -12,6 +12,7 @@ let maplocalleader = "\\"
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+Bundle 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
@@ -20,13 +21,13 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
+let g:ycm_key_list_select_completion   = [ '<c-n>', '<down>' ]
+let g:ycm_key_list_previous_completion = [ '<c-p>', '<up>'   ]
+let g:SuperTabDefaultCompletionType    = '<c-n>'
+
 let g:UltiSnipsExpandTrigger           = '<tab>'
 let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<down>']
-let g:ycm_key_list_previous_completion = ['<up>']
 
 nnoremap <F5> :NERDTreeToggle<cr>
 nnoremap <F6> :TagbarToggle<CR>
