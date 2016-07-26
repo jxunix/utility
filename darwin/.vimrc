@@ -92,7 +92,7 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=4
-set noexpandtab
+set expandtab
 set autoindent
 set smartindent
 set cindent
@@ -124,9 +124,10 @@ set viminfo+=!
 "-------------------------------------------------------------------------------
 " III. MAPPING
 "-------------------------------------------------------------------------------
-map <silent> <leader><cr> :noh<cr>
-nnoremap <leader>rc :vsp $MYVIMRC<cr>
-nnoremap <leader>sr :w<esc>:source $MYVIMRC<cr>
+map <silent> <leader><cr>      :noh<cr>
+nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
+nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
+nnoremap <silent> <F4>         :call <SID>StripTrailingWhitespaces()<cr>
 
 nnoremap <c-j> <c-W>j
 nnoremap <c-k> <c-W>k
@@ -196,6 +197,15 @@ func! InAnEmptyPair()
 	return 0
 endfunc
 
+func! <SID>StripTrailingWhitespaces()
+    let _s = @/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/ = _s
+    call cursor(l, c)
+endfunc
+
 "-------------------------------------------------------------------------------
 " IV. AUTOCOMMAND
 "-------------------------------------------------------------------------------
@@ -204,8 +214,12 @@ for f in split(glob('~/.vim/ftplugin/*.vim'), '\n')
 endfor
 autocmd BufNewFile * silent! $r ~/.vim/template/%:e.tpl
 
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
 "-------------------------------------------------------------------------------
 " V. GUI
 "-------------------------------------------------------------------------------
 colorscheme peachpuff
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+highlight ColorColumn ctermbg=235 guibg=#808080
