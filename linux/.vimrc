@@ -20,8 +20,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
 let g:SuperTabDefaultCompletionType    = '<C-n>'
 let g:SuperTabCrMapping                = 0
 let g:UltiSnipsExpandTrigger           = '<tab>'
@@ -93,7 +91,7 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=4
-set noexpandtab
+set expandtab
 set autoindent
 set smartindent
 set cindent
@@ -126,8 +124,9 @@ set viminfo+=!
 " III. MAPPING
 "-------------------------------------------------------------------------------
 map <silent> <leader><cr> :noh<cr>
-nnoremap <leader>rc :vsp $MYVIMRC<cr>
-nnoremap <leader>sr :w<esc>:source $MYVIMRC<cr>
+nnoremap <silent> <leader>rc       :vsp $MYVIMRC<cr>
+nnoremap <silent> <leader>sr       :w<esc>:source $MYVIMRC<cr>:noh<cr>
+nnoremap <silent> <F4>            l
 
 nnoremap <c-j> <c-W>j
 nnoremap <c-k> <c-W>k

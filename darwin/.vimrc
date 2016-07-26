@@ -125,6 +125,7 @@ set viminfo+=!
 " III. MAPPING
 "-------------------------------------------------------------------------------
 map <silent> <leader><cr>      :noh<cr>
+map <silent> <localleader><cr> :noh<cr>
 nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
 nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
 nnoremap <silent> <F4>         :call <SID>StripTrailingWhitespaces()<cr>
