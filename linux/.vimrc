@@ -123,10 +123,11 @@ set viminfo+=!
 "-------------------------------------------------------------------------------
 " III. MAPPING
 "-------------------------------------------------------------------------------
-map <silent> <leader><cr> :noh<cr>
-nnoremap <silent> <leader>rc       :vsp $MYVIMRC<cr>
-nnoremap <silent> <leader>sr       :w<esc>:source $MYVIMRC<cr>:noh<cr>
-nnoremap <silent> <F4>            l
+map <silent> <leader><cr>      :noh<cr>
+map <silent> <localleader><cr> :noh<cr>
+nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
+nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
+nnoremap <silent> <F4>         :call <SID>StripTrailingWhitespaces()<cr>
 
 nnoremap <c-j> <c-W>j
 nnoremap <c-k> <c-W>k
@@ -203,6 +204,10 @@ for f in split(glob('~/.vim/ftplugin/*.vim'), '\n')
 	exe 'source' f
 endfor
 autocmd BufNewFile * silent! $r ~/.vim/template/%:e.tpl
+
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 "-------------------------------------------------------------------------------
 " V. GUI
