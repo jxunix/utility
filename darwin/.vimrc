@@ -223,5 +223,6 @@ endif
 "-------------------------------------------------------------------------------
 " V. GUI
 "-------------------------------------------------------------------------------
-colorscheme peachpuff
-highlight ColorColumn ctermbg=235 guibg=#808080
+set t_Co=256
+colorscheme jxu
+highlight ColorColumn ctermbg=235
