@@ -1,12 +1,19 @@
-hi clear
+highlight clear
 set background=dark
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name = "jxu"
+  let g:colors_name = "jxu"
 
+"--------|----------|----------|----------|----------|
+highlight ColorColumn   ctermbg=234             cterm=none
 highlight Comment       ctermfg=8
 highlight Constant      ctermfg=45              cterm=none
+highlight CursorLine    ctermfg=15  ctermbg=12  cterm=none
+highlight DiffAdd                   ctermbg=8
+highlight DiffDelete    ctermfg=8   ctermbg=0
+highlight DiffChange                ctermbg=0
+highlight DiffText                  ctermbg=9   cterm=none
 highlight Error                     ctermbg=9
 highlight Function      ctermfg=10
 highlight LineNr        ctermfg=8
@@ -25,3 +32,4 @@ highlight StatusLineNC  ctermfg=0   ctermbg=8   cterm=none
 highlight String        ctermfg=45
 highlight Todo          ctermfg=15  ctermbg=9   cterm=bold
 highlight Type          ctermfg=10
+highlight Visual                    ctermbg=12
