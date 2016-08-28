@@ -131,6 +131,8 @@ nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
 nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
 nnoremap <silent> <F4>         :call <SID>StripTrailingWhitespaces()<cr>
 
+nnoremap Y y$
+
 nnoremap <c-j> <c-W>j
 nnoremap <c-k> <c-W>k
 nnoremap <c-h> <c-W>h
