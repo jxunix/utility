@@ -2,6 +2,8 @@
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+brew install homebrew/python/numpy
+brew install matplotlib
 brew install tmux
 
 brew cask install citrix-receiver

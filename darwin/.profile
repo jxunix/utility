@@ -4,5 +4,5 @@ alias la="ls -a"
 alias lla="ls -al"
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
-Dropbox="${HOME}/Dropbox"
-Project="${HOME}/Documents"
+dropbox="${HOME}/Dropbox"
+project="${HOME}/Documents"
