@@ -56,7 +56,6 @@ syntax on
 filetype plugin indent on
 set hlsearch
 set cursorline
-let &colorcolumn=join(range(81, 300), ",")
 
 " 6 MULTIPLE WINDOWS
 set laststatus=2
@@ -81,9 +80,7 @@ set selection=exclusive
 set selectmode=mouse,key
 
 " 14 EDITING TEXT
-set textwidth=80
 set backspace=2
-set formatoptions+=t
 set completeopt=longest,menu
 set showmatch
 set matchtime=1
