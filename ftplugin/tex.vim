@@ -21,12 +21,12 @@ autocmd FileType tex command! Clean :call <SID>clean()
 "-------------------------------------------------------------------------------
 " Function Definition
 "-------------------------------------------------------------------------------
-func! s:compileAndRun()
+func! <SID>compileAndRun()
 	exec "w"
 	exec "!latexmk -pdf -pv %"
 endfunc
 
-func! s:clean()
+func! <SID>clean()
 	exec "!latexmk -c"
 	exec "!rm -rf %<.bbl"
 endfunc

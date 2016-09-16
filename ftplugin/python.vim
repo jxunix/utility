@@ -11,7 +11,7 @@ autocmd FileType python iabbrev #-- #-------------------------------------------
 "-------------------------------------------------------------------------------
 " Function Definition
 "-------------------------------------------------------------------------------
-func! s:compileAndRun()
+func! <SID>compileAndRun()
 	exec "w"
 	exec "!python %"
 endfunc
