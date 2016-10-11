@@ -9,7 +9,7 @@ endif
 highlight ColorColumn   ctermbg=234             cterm=none
 highlight Comment       ctermfg=8
 highlight Constant      ctermfg=45              cterm=none
-highlight CursorLine    ctermfg=15  ctermbg=12  cterm=none
+"highlight CursorLine    ctermfg=15  ctermbg=12  cterm=none
 highlight DiffAdd                   ctermbg=8
 highlight DiffDelete    ctermfg=8   ctermbg=0
 highlight DiffChange                ctermbg=0

@@ -80,6 +80,7 @@ set selection=exclusive
 set selectmode=mouse,key
 
 " 14 EDITING TEXT
+set textwidth=0
 set backspace=2
 set completeopt=longest,menu
 set showmatch
@@ -126,9 +127,11 @@ map <silent> <leader><cr>      :noh<cr>
 map <silent> <localleader><cr> :noh<cr>
 nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
 nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
-nnoremap <silent> <F4>         :call <SID>StripTrailingWhitespaces()<cr>
 
-nnoremap Y y$
+nnoremap <silent> Y y$
+nnoremap <leader>f za
+nnoremap j gj
+nnoremap k gk
 
 nnoremap <c-j> <c-W>j
 nnoremap <c-k> <c-W>k
@@ -198,18 +201,16 @@ func! InAnEmptyPair()
 	return 0
 endfunc
 
-func! <SID>StripTrailingWhitespaces()
-    let _s = @/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/ = _s
-    call cursor(l, c)
-endfunc
-
 "-------------------------------------------------------------------------------
 " IV. AUTOCOMMAND
 "-------------------------------------------------------------------------------
+autocmd BufReadPost *
+            \ if ! exists("g:leave_my_cursor_position_alone") |
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \ exe "normal g'\"" |
+            \ endif |
+            \ endif
+
 for f in split(glob('~/.vim/ftplugin/*.vim'), '\n')
 	exe 'source' f
 endfor
