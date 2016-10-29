@@ -1,0 +1,285 @@
+    1  sudo apt-get update
+    2  sudo add-apt-repository ppa:graphics-drivers/ppa
+    3  sudo apt-get update
+    4  l
+    5  sudo apt install ibus-pinyin
+    6  sudo apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-qt4
+    7  im-switch -s ibus
+    8  which ibus
+    9  ibus
+   10  which im-switch
+   11  which ibus-setup
+   12  ibus-setup
+   13  sudo apt install ibus-pinyin
+   14  sudo apt update
+   15  ibus-setup
+   16  ibus restart
+   17  l
+   18  cd Documents/
+   19  l
+   20  cd utility/
+   21  l
+   22  vim ~/.bashrc
+   23  l
+   24  fg
+   25  vim ~/.bashrc
+   26  l
+   27  fg
+   28  source ~/.bashrc
+   29  l
+   30  vim ~/.bashrc
+   31  ls
+   32  la
+   33  fg
+   34  l
+   35  fg
+   36  ll
+   37  fg
+   38  la
+   39  fg
+   40  ls
+   41  ls -C
+   42  fg
+   43  echo $profile
+   44  echo $vimrc
+   45  fg
+   46  source $bashrc
+   47  source ~/.bashrc
+   48  source $bashrc
+   49  l
+   50  la
+   51  fg
+   52  l
+   53  vim $bashrc
+   54  source $bashrc
+   55  l
+   56  la
+   57  ll
+   58  source $bashrc
+   59  vim $bashrc
+   60  source $bashrc
+   61  l
+   62  la
+   63  ls
+   64  ll
+   65  l
+   66  vim linux/
+   67  l
+   68  cd linux/
+   69  l
+   70  la
+   71  vim .bashrc 
+   72  l
+   73  cd ..
+   74  l
+   75  cd u
+   76  l
+   77  vim Makefile 
+   78  cp linux/.vimrc ~
+   79  cd
+   80  la
+   81  vim ~/.bashrc
+   82  la
+   83  l
+   84  l .vim
+   85  ls .vim
+   86  l
+   87  vim $bashrc
+   88  source $bashrc
+   89  la
+   90  l -A
+   91  l
+   92  l -l
+   93  l -a
+   94  ls -1 -A | wc -l
+   95  la
+   96  cd Documents/utility/
+   97  l
+   98  cp -r template ~/.vim
+   99  cp -r ftplugin ~/.vim
+  100  cp -r colors ~/.vim
+  101  cp -r snippets/ ~/.vim
+  102  cd
+  103  l
+  104  cd .vim/
+  105  l
+  106  cd ../
+  107  l
+  108  vim $vimrc
+  109  l
+  110  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  111  git clone https://github.com/Valloric/YouCompleteMe ~/.vim/bundle/YouCompleteMe
+  112  cd ~/.vim/bundle/YouCompleteMe
+  113  l
+  114  ./install.py --clang-completer 
+  115  git submodule update --init --recursive
+  116  ./install.py --clang-completer 
+  117  sudo apt install CMake
+  118  sudo apt install cmake
+  119  ./install.py --clang-completer 
+  120  which dnf
+  121  echo $?
+  122  which apt
+  123  echo $?
+  124  which dnf
+  125  echo $?
+  126  l
+  127  cd
+  128  l
+  129  vim $vimrc
+  130  ll
+  131  l
+  132  vim .vim/colors/jxu.vim 
+  133  l
+  134  vim $vimrc
+  135  vim .vim/colors/jxu.vim 
+  136  l
+  137  vim $vimrc
+  138  sed -n l
+  139  fg
+  140  l
+  141  cd .vim
+  142  l
+  143  vim ftplugin/
+  144  l
+  145  cd ftplugin/
+  146  l
+  147  vim *
+  148  which java
+  149  fg
+  150  l
+  151  rm text.vim 
+  152  l
+  153  vim *
+  154  l
+  155  vim xml.vim 
+  156  l
+  157  cd ..
+  158  l
+  159  rm -rf template/
+  160  l
+  161  cd snippets/
+  162  l
+  163  vim *
+  164  l
+  165  fg
+  166  l
+  167  cd ..
+  168  l
+  169  cd ..
+  170  l
+  171  cd Dcu
+  172  cd Documents/
+  173  l
+  174  cd utility/
+  175  l
+  176  vim Makefile 
+  177  uname -s
+  178  fg
+  179  uname -s | tr A-Z a-z
+  180  fg
+  181  echo $HOME
+  182  fg
+  183  l
+  184  cd
+  185  l
+  186  mkdir -p a/b
+  187  l
+  188  cd a/
+  189  l
+  190  cd b
+  191  l
+  192  touch x1 x2
+  193  l
+  194  touch x3 x4
+  195  l
+  196  cd ..
+  197  l
+  198  cd ../
+  199  l
+  200  mkdir b
+  201  l
+  202  cd b
+  203  l
+  204  touch x1 x2 x3
+  205  l
+  206  cd ..
+  207  l
+  208  cp -r b a/
+  209  l
+  210  l a/b/
+  211  rm -rf a b/
+  212  l
+  213  cd Documents/utility/
+  214  l
+  215  vim Makefile 
+  216  l ~/.vim/snippets/
+  217  fg
+  218  mv ~/.vim/snippets ~/.vim/bundle/ultisnips/
+  219  l ~/.vim/bundle/ultisnips/snippets/
+  220  fg
+  221  l
+  222  make push
+  223  git config --global user.email "xnirvana508@gmail.com"
+  224  git config --global user.name "Jun Xu"
+  225  make push
+  226  git config --global user.name "jxunix"
+  227  l
+  228  l colors/
+  229  l ftplugin/
+  230  l snippets/
+  231  rm -rf template/
+  232  l
+  233  cd
+  234  l
+  235  la
+  236  vim .gitconfig 
+  237  l
+  238  cd ..
+  239  l
+  240  cd ~/Documents/utility/
+  241  l
+  242  vim README.md 
+  243  l ftplugin/
+  244  fg
+  245  l
+  246  make push
+  247  l
+  248  vim linux/
+  249  ssh-keygen -t rsa -C "xnirvana508@gmail.com"
+  250  fg
+  251  which ssh
+  252  la ~
+  253  fg
+  254  ssh-keygen -t rsa -C "xnirvana508@gmail.com"
+  255  l
+  256  rm yes yes.pub 
+  257  l
+  258  vim ~/.ssh/id_rsa.pub 
+  259  which gedit
+  260  gedit ~/.ssh/id_rsa.pub 
+  261  fg
+  262  ssh -T git@github.com
+  263  fg
+  264  l
+  265  vim README.md 
+  266  make push
+  267  la
+  268  rm .Makefile.swp 
+  269  make push
+  270  l
+  271  vim Makefile 
+  272  git config --global user.name "Jun Xu"
+  273  vim ~/.gitconfig 
+  274  l
+  275  vim Makefile 
+  276  make push
+  277  git remote -v
+  278  git remote set-url origin git@github.com:jxunix/utility.git
+  279  git remote -v
+  280  l
+  281  vim Makefile 
+  282  make push
+  283  l
+  284  history
+  285  history > hist.log

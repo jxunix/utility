@@ -138,3 +138,5 @@ alias mm='mc; m'
 
 alias gs='grep --include=\*.{h,cpp} -r'
 alias f='find * -name'
+
+alias ft='wine ~/Documents/warcraft/Warcraft\ III/Frozen\ Throne.exe -opengl'
