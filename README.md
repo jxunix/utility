@@ -16,6 +16,5 @@ Launch vim and run :PluginInstall
 	- Makefile
 	- .vimrc contains optional runtime configuration settings to initialize Vim when it starts.
 	- All \*.vim files in the ftplugin directory are configuration files for the corresponding programming languages; </br>
-		Now they support C/C++, Java, Shell, python, MATLAB, R, LaTeX and Text file.
-	- All \*.tpl files in the template directory are template files for the corresponding programming languges. They will be loaded whenever a new file is created.
+		Now C/C++, Java, Shell, Python, MATLAB, R and LaTeX are supported.
 	- install.sh is the shell script that installs necessary packages after installing the OS.
