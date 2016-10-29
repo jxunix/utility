@@ -16,7 +16,11 @@ ifeq (${OS}, darwin)
 endif
 
 push:
-	rm -rf ${OS}/${BASHRC} ${OS}/${VIMRC} ${FTPLUGIN} ${COLORS} ${SNIPPETS}
+	rm -rf ${OS}/${BASHRC} \
+		${OS}/${VIMRC} \
+		${FTPLUGIN} \
+		${COLORS} \
+		${SNIPPETS}
 	cp ${HOME}/${BASHRC}                      ${OS}/
 	cp ${HOME}/${VIMRC}                       ${OS}/
 	cp -r ${DIR_VIM}/${FTPLUGIN}              ./
@@ -28,7 +32,11 @@ push:
 
 pull:
 	git pull git@github.com:jxunix/utility.git
-	rm -rf ${HOME}/${BASHRC} ${HOME}/${BASHRC} ${DIR_VIM}/${FTPLUGIN} ${DIR_VIM}/${COLORS} ${DIR_VIM}/${ULTISNIPS}/${SNIPPETS}
+	rm -rf ${HOME}/${BASHRC} \
+		${HOME}/${BASHRC} \
+		${DIR_VIM}/${FTPLUGIN} \
+		${DIR_VIM}/${COLORS} \
+		${DIR_VIM}/${ULTISNIPS}/${SNIPPETS}
 	cp ${OS}/${BASHRC} ${HOME}
 	cp ${OS}/${VIMRC}  ${HOME}
 	cp -r ${FTPLUGIN}  ${DIR_VIM}/
