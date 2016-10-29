@@ -18,7 +18,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 let g:ycm_key_list_select_completion   = [ '<c-n>', '<down>' ]
@@ -30,7 +30,7 @@ let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 
 nnoremap <F5> :NERDTreeToggle<cr>
-nnoremap <F6> :TagbarToggle<CR>
+nnoremap <F6> :TagbarToggle<cr>
 
 "-------------------------------------------------------------------------------
 " II. OPTIONS
@@ -43,7 +43,7 @@ set pastetoggle=<F3>
 set whichwrap+=<,>,[,],s,b
 set incsearch
 set magic
-set noignorecase
+set ignorecase
 set smartcase
 
 " 3 TAGES
@@ -56,10 +56,11 @@ syntax on
 filetype plugin indent on
 set hlsearch
 set cursorline
-let &colorcolumn=join(range(81, 300), ",")
 
 " 6 MULTIPLE WINDOWS
 set laststatus=2
+set splitbelow
+set splitright
 
 " 7 MULTIPLE TAB PAGES
 " 8 TERMINAL
@@ -80,9 +81,7 @@ set selection=exclusive
 set selectmode=mouse,key
 
 " 13 EDITING TEXT
-set textwidth=80
 set backspace=2
-set formatoptions+=t
 set completeopt=longest,menu
 set showmatch
 set matchtime=1
@@ -97,7 +96,7 @@ set autoindent
 set smartindent
 set cindent
 
-" 15 FOLDING
+" 15 FOLDI<cr>NG
 " 16 DIFF MODE
 " 17 MAPPING
 " 18 READING AND WRITING FILES
@@ -119,18 +118,30 @@ set wildmenu
 
 " 24 MULTI-BYTE CHARACTERS
 " 25 VARIOUS
+set encoding=utf-8
 set viminfo+=!
 
 "-------------------------------------------------------------------------------
 " III. MAPPING
 "-------------------------------------------------------------------------------
-map <silent> <leader><cr>      :noh<cr>
-map <silent> <localleader><cr> :noh<cr>
+map <esc>1 1gt
+map <esc>2 2gt
+map <esc>3 3gt
+map <esc>4 4gt
+map <esc>5 5gt
+map <esc>6 6gt
+map <esc>7 7gt
+map <esc>8 8gt
+map <esc>9 9gt
+map <esc>0 :tablast<cr>
+
 nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
 nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
-nnoremap <silent> <F4>         :call <SID>StripTrailingWhitespaces()<cr>
 
 nnoremap Y y$
+
+nnoremap * *Nzzzv
+nnoremap # #nzzzv
 
 nnoremap <c-j> <c-W>j
 nnoremap <c-k> <c-W>k
@@ -140,14 +151,10 @@ nnoremap <c-l> <c-W>l
 inoremap ( ()<esc>i
 inoremap { {}<esc>i
 inoremap [ []<esc>i
-"inoremap " ""<esc>i
-"inoremap ' ''<esc>i
 
 inoremap ) <c-r>=ClosePair(')')<cr>
 inoremap } <c-r>=ClosePair('}')<cr>
 inoremap ] <c-r>=ClosePair(']')<cr>
-"inoremap " <c-r>=QuoteDelim('"')<cr>
-"inoremap ' <c-r>=QuoteDelim("'")<cr>
 
 inoremap <expr> <bs> DeleteEmptyPair()
 
@@ -203,14 +210,16 @@ endfunc
 "-------------------------------------------------------------------------------
 " IV. AUTOCOMMAND
 "-------------------------------------------------------------------------------
+autocmd BufReadPost *
+\ if ! exists("g:leave_my_cursor_position_alone") |
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\ exe "normal g'\"" |
+\ endif |
+\ endif
+
 for f in split(glob('~/.vim/ftplugin/*.vim'), '\n')
 	exe 'source' f
 endfor
-autocmd BufNewFile * silent! $r ~/.vim/template/%:e.tpl
-
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
 
 "-------------------------------------------------------------------------------
 " V. GUI

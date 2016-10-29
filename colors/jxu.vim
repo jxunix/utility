@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
   let g:colors_name = "jxu"
 
-"--------|----------|----------|----------|----------|
+"--------|-------------|-----------|-----------|----------|
 highlight ColorColumn   ctermbg=234             cterm=none
 highlight Comment       ctermfg=8
 highlight Constant      ctermfg=45              cterm=none
@@ -17,7 +17,7 @@ highlight DiffText                  ctermbg=9   cterm=none
 highlight Error                     ctermbg=9
 highlight Function      ctermfg=10
 highlight LineNr        ctermfg=8
-highlight Normal        ctermfg=253
+highlight Normal        ctermfg=253 ctermbg=16
 highlight Number        ctermfg=45
 highlight Pmenu         ctermfg=15  ctermbg=8
 highlight PmenuSbar                 ctermbg=8
