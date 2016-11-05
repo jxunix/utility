@@ -70,6 +70,7 @@ else
     apt install cmake -y
     apt install ctags -y
     apt install default-jdk -y
+    apt install fcitx-googlepinyin -y
     apt install git -y
     apt install nautilus-dropbox -y
     apt install r-base -y
