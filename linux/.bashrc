@@ -141,6 +141,8 @@ alias mm='mc; m'
 alias gs='grep --include=\*.{h,cpp} -r'
 alias f='find * -name'
 
+alias update='sudo apt update; sudo apt dist-upgrade -y'
+
 alias ft='wine ~/Documents/warcraft/Warcraft\ III/Frozen\ Throne.exe -opengl'
 
 alias utility='cd $utility'
