@@ -9,8 +9,6 @@ FTPLUGIN = "ftplugin"
 COLORS = "colors"
 INSTALL = "install.sh"
 DIR_VIM = "${HOME}/.vim"
-ULTISNIPS = "bundle/ultisnips"
-SNIPPETS = "snippets"
 
 BASHRC = ".bashrc"
 ifeq (${OS}, darwin)
@@ -18,32 +16,22 @@ ifeq (${OS}, darwin)
 endif
 
 push:
-	rm -rf ${OS}/${BASHRC} \
-		${OS}/${VIMRC} \
-		${FTPLUGIN} \
-		${COLORS} \
-		${SNIPPETS}
-	cp ${HOME}/${BASHRC}                      ${OS}/
-	cp ${HOME}/${VIMRC}                       ${OS}/
-	cp -r ${DIR_VIM}/${FTPLUGIN}              ./
-	cp -r ${DIR_VIM}/${COLORS}   			  ./
-	cp -r ${DIR_VIM}/${ULTISNIPS}/${SNIPPETS} ./
+	rm -f ${FTPLUGIN}/* ${COLORS}/*
+	cp ${HOME}/${BASHRC}        ${OS}/
+	cp ${HOME}/${VIMRC}         ${OS}/
+	cp ${DIR_VIM}/${FTPLUGIN}/* ${FTPLUGIN}/
+	cp ${DIR_VIM}/${COLORS}/*   ${COLORS}/
 	git add -A
 	git commit -m "sync"
 	git push origin master
 
 pull:
 	git pull git@github.com:jxunix/utility.git
-	rm -rf ${HOME}/${BASHRC} \
-		${HOME}/${BASHRC} \
-		${DIR_VIM}/${FTPLUGIN} \
-		${DIR_VIM}/${COLORS} \
-		${DIR_VIM}/${ULTISNIPS}/${SNIPPETS}
-	cp ${OS}/${BASHRC} ${HOME}
-	cp ${OS}/${VIMRC}  ${HOME}
-	cp -r ${FTPLUGIN}  ${DIR_VIM}/
-	cp -r ${COLORS}    ${DIR_VIM}/
-	cp -r ${SNIPPETS}  ${DIR_VIM}/${ULTISNIPS}
+	rm -f ${DIR_VIM}/${FTPLUGIN}/* ${DIR_VIM}/${COLORS}/*
+	cp ${OS}/${BASHRC} ${HOME}/
+	cp ${OS}/${VIMRC}  ${HOME}/
+	cp ${FTPLUGIN}/*   ${DIR_VIM}/${FTPLUGIN}/
+	cp ${COLORS}/*     ${DIR_VIM}/${COLORS}/
 
 install:
 	sudo sh ./${OS}/${INSTALL}
