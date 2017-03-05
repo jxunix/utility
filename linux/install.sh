@@ -58,12 +58,12 @@ else
     add-apt-repository ppa:graphics-drivers/ppa
     apt update -y
 
-    apt install ibus
-    apt install ibus-clutter
-    apt install ibus-gtk
-    apt install ibus-gtk3
-    apt install ibus-qt4
-    apt install ibus-pinyin
+    apt install ibus -y
+    apt install ibus-clutter -y
+    apt install ibus-gtk -y
+    apt install ibus-gtk3 -y
+    apt install ibus-qt4 -y
+    apt install ibus-pinyin -y
     ibus restart
 
     apt install build-essential -y
