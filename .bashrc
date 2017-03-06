@@ -117,7 +117,7 @@ fi
 
 export vimrc=~/.vimrc
 export bashrc=~/.bashrc
-export utility=~/Documents/utility
+export doc=~/Documents
 
 l_aux() {
     count=$(ls -1 "$@" | wc -l)
@@ -129,20 +129,15 @@ l_aux() {
     fi
 }
 
-alias l='l_aux'
-alias la='l -A'
-alias ll='ls -al'
-alias lsrc='ls *.{h,cpp}'
+alias l="l_aux"
+alias la="l -A"
+alias ll="ls -al"
 
-alias m='make'
-alias mc='make clean'
-alias mm='mc; m'
+alias vv="vim $vimrc"
+alias vs="vim $bashrc"
+alias ss="source $bashrc"
 
-alias gs='grep --include=\*.{h,cpp} -r'
-alias f='find * -name'
+alias gs="grep --include=\*.{h,cpp} -r"
+alias f="find * -name"
 
-alias update='sudo apt update; sudo apt dist-upgrade -y'
-
-alias ft='wine ~/Documents/warcraft/Warcraft\ III/Frozen\ Throne.exe -opengl'
-
-alias utility='cd $utility'
+alias update="sudo apt update; sudo apt dist-upgrade -y"

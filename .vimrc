@@ -44,7 +44,7 @@ set pastetoggle=<F3>
 set whichwrap+=<,>,[,],s,b
 set incsearch
 set magic
-set ignorecase
+set noignorecase
 set smartcase
 
 " 3 TAGES
@@ -138,6 +138,8 @@ map <esc>0 :tablast<cr>
 
 nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
 nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
+nnoremap <silent> <leader>vs   :vsp $bashrc<cr>
+nnoremap <silent> <leader>q    :qall<cr>
 
 nnoremap Y y$
 
