@@ -1,0 +1,25 @@
+[user]
+	email = xnirvana508@gmail.com
+	name = Jun Xu
+[color]
+    status = auto
+    branch = auto
+    interactive = auto
+    diff = auto
+[alias]
+    br = branch
+    ch = checkout
+    co = commit
+    re = remote -v
+    st = status
+    sy = "!git pull upstream master --tags; git push origin master;"
+    lg = log -10 --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
+    ls = "!f() { \
+        dir=$(pwd); \
+        for d in ~/mbig/*; do \
+            if [ "$d" != "~/mbig/hippolg" -a -d "$d" -a -d "$d/.git" ]; then \
+                echo $(basename "$d"); cd "$d"; git br; \
+            fi; \
+        done; \
+        cd "$dir"; \
+    }; f;"

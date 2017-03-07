@@ -112,13 +112,15 @@ if ! shopt -oq posix; then
 fi
 
 #------------------------------------------------------------------------------
-# Customization
+# Variables
 #------------------------------------------------------------------------------
-
 export vimrc=~/.vimrc
 export bashrc=~/.bashrc
 export doc=~/Documents
 
+#----------------------------------------------------------------------
+# Functions
+#----------------------------------------------------------------------
 l_aux() {
     count=$(ls -1 "$@" | wc -l)
     if [ "$count" -gt 30 ]
@@ -129,15 +131,32 @@ l_aux() {
     fi
 }
 
+vcc_aux() {
+    if [ "${1:-1}" == "." ]; then
+        vim -O $1{h,cpp}
+    else
+        vim -O $1.{h,cpp}
+    fi
+}
+
+#----------------------------------------------------------------------
+# Alias
+#----------------------------------------------------------------------
+for dir in ~/Documents/*; do
+    [ -d "$dir" ] && alias $(basename "$dir")="cd $dir"
+done
+
 alias l="l_aux"
 alias la="l -A"
 alias ll="ls -al"
 
 alias vv="vim $vimrc"
-alias vs="vim $bashrc"
-alias ss="source $bashrc"
+alias vp="vim $bashrc"
+alias sp="source $bashrc"
 
 alias gs="grep --include=\*.{h,cpp} -r"
+alias gp="grep --include=\*.py -r"
 alias f="find * -name"
+alias v="vcc_aux"
 
 alias update="sudo apt update; sudo apt dist-upgrade -y"

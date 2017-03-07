@@ -45,7 +45,6 @@ set whichwrap+=<,>,[,],s,b
 set incsearch
 set magic
 set noignorecase
-set smartcase
 
 " 3 TAGES
 " 4 DISPLAYING TEXT
@@ -97,7 +96,7 @@ set autoindent
 set smartindent
 set cindent
 
-" 15 FOLDI<cr>NG
+" 15 FOLDING
 " 16 DIFF MODE
 " 17 MAPPING
 " 18 READING AND WRITING FILES
@@ -136,9 +135,9 @@ map <esc>8 8gt
 map <esc>9 9gt
 map <esc>0 :tablast<cr>
 
-nnoremap <silent> <leader>rc   :vsp $MYVIMRC<cr>
-nnoremap <silent> <leader>sr   :w<cr>:source $MYVIMRC<cr>:noh<cr>
-nnoremap <silent> <leader>vs   :vsp $bashrc<cr>
+nnoremap <silent> <leader>vv   :vsp $MYVIMRC<cr>
+nnoremap <silent> <leader>sv   :w<cr>:source $MYVIMRC<cr>:noh<cr>
+nnoremap <silent> <leader>vp   :vsp $bashrc<cr>
 nnoremap <silent> <leader>q    :qall<cr>
 
 nnoremap Y y$
@@ -146,10 +145,10 @@ nnoremap Y y$
 nnoremap * *Nzzzv
 nnoremap # #nzzzv
 
-nnoremap <c-j> <c-W>j
-nnoremap <c-k> <c-W>k
-nnoremap <c-h> <c-W>h
-nnoremap <c-l> <c-W>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 inoremap ( ()<esc>i
 inoremap { {}<esc>i
@@ -173,41 +172,41 @@ vnoremap " <esc>`>a"<esc>`<i"<esc>
 vnoremap ' <esc>`>a'<esc>`<i'<esc>
 
 func! ClosePair(char)
-	if getline('.')[col('.') - 1] == a:char
-		return "\<right>"
-	else
-		return a:char
-	endif
+    if getline('.')[col('.') - 1] == a:char
+        return "\<right>"
+    else
+        return a:char
+    endif
 endfunc
 
 func! QuoteDelim(char)
-	let line = getline('.')
-	let col = col('.')
-	if line[col - 2] == "\\"
-		return a:char
-	elseif line[col - 1] == a:char
-		return "\<right>"
-	else
-		return a:char.a:char."\<left>"
-	endif
+    let line = getline('.')
+    let col = col('.')
+    if line[col - 2] == "\\"
+        return a:char
+    elseif line[col - 1] == a:char
+        return "\<right>"
+    else
+        return a:char.a:char."\<left>"
+    endif
 endfunc
 
 func! DeleteEmptyPair()
-	if InAnEmptyPair()
-		return "\<left>\<del>\<del>"
-	else
-		return "\<bs>"
-	endif
+    if InAnEmptyPair()
+        return "\<left>\<del>\<del>"
+    else
+        return "\<bs>"
+    endif
 endfunc
 
 func! InAnEmptyPair()
-	let cur = strpart(getline('.'),getpos('.')[2]-2,2)
-	for pair in (split(&matchpairs,',') + ['":"',"':'"])
-		if cur == join(split(pair,':'),'')
-			return 1
-		endif
-	endfor
-	return 0
+    let cur = strpart(getline('.'),getpos('.')[2]-2,2)
+    for pair in (split(&matchpairs,',') + ['":"',"':'"])
+        if cur == join(split(pair,':'),'')
+            return 1
+        endif
+    endfor
+    return 0
 endfunc
 
 "-------------------------------------------------------------------------------
@@ -221,8 +220,12 @@ autocmd BufReadPost *
 \ endif
 
 for f in split(glob('~/.vim/ftplugin/*.vim'), '\n')
-	exe 'source' f
+    exe 'source' f
 endfor
+
+if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 "-------------------------------------------------------------------------------
 " V. GUI
