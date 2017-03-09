@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Matlab
-GenericName=Matlab R2014a
-Comment=Matlab R2014a: The Language of Technical Computing
-Exec=/usr/local/MATLAB/R2014a/bin/matlab -desktop
-Terminal=false
-Type=Application
-Icon=/usr/local/MATLAB/R2014a/matlab.png
-Version=1.0
