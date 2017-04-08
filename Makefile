@@ -7,7 +7,7 @@ REPO="git@github.com:jxunix/utility.git"
 all: push
 
 pull:
-	git pull $REPO
+	git pull ${REPO}
 	ln -sf ./.bashrc    ~/.bashrc
 	ln -sf ./.vimrc     ~/.vimrc
 	ln -sf ./.gitconfig ~/.gitconfig
