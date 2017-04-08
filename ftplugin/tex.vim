@@ -1,8 +1,6 @@
 "-------------------------------------------------------------------------------
 " Autocommands
 "-------------------------------------------------------------------------------
-autocmd FileType tex let &colorcolumn=join(range(81, 300), ",")
-
 autocmd FileType tex nnoremap <silent><buffer> <F9> :call <sid>compileAndRun()<cr>
 
 autocmd FileType tex command! Clean :call <sid>clean()
