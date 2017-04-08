@@ -2,7 +2,9 @@
 
 .PHONY: clean push pull install
 
-REPO = "git@github.com:jxunix/utility.git"
+REPO="git@github.com:jxunix/utility.git"
+
+all: push
 
 pull:
 	git pull $REPO
