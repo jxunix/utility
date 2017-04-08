@@ -7,26 +7,26 @@ apt dist-upgrade -y
 
 add-apt-repository ppa:graphics-drivers/ppa
 
-apt install ibus -y
-apt install ibus-clutter -y
-apt install ibus-gtk -y
-apt install ibus-gtk3 -y
-apt install ibus-qt4 -y
-apt install ibus-pinyin -y
+apt install -y ibus
+apt install -y ibus-clutter
+apt install -y ibus-gtk
+apt install -y ibus-gtk3
+apt install -y ibus-qt4
+apt install -y ibus-pinyin
 ibus restart
 
-apt install build-essential -y
-apt install cmake -y
-apt install ctags -y
-apt install default-jdk -y
-apt install fcitx-googlepinyin -y
-apt install git -y
-apt install nautilus-dropbox -y
-apt install python-dev -y
-apt install r-base -y
-apt install texlive-full -y
-apt install unrar -y
-apt install vim -y
+apt install -y build-essential
+apt install -y cmake
+apt install -y ctags
+apt install -y default-jdk
+apt install -y fcitx-googlepinyin
+apt install -y git
+apt install -y nautilus-dropbox
+apt install -y python-dev
+apt install -y r-base
+apt install -y texlive-full
+apt install -y unrar
+apt install -y vim
 
 apt update -y
 apt dist-upgrade -y
@@ -50,9 +50,13 @@ dir_utility="~/Documents/utility"
 git_utility="https://github.com/jxunix/utility.git"
 
 git clone "$git_utility" "$dir_utility"
-cp    "$dir_utility"/.vimrc   ~/
-cp -r "$dir_utility"/colors   ~/.vim/
-cp -r "$dir_utility"/ftplugin ~/.vim/
+ln -sf "$dir_utility"/.vimrc    ~/.vimrc
+ln -sf "$dir_utility"/colors    ~/.vim/colors
+ln -sf "$dir_utility"/ftplugin  ~/.vim/ftplugin
+
+# .bashrc and .gitconfig
+ln -sf "dir_utility"/.bashrc    ~/.bashrc
+ln -sf "dir_utility"/.gitconfig ~/.gitconfig
 
 # vundle
 dir_vundle="~/.vim/bundle/Vundle.vim"
@@ -64,13 +68,9 @@ git clone "$git_vundle" "$dir_vundle"
 dir_ycm="~/.vim/bundle/YouCompleteMe"
 git_ycm="https://github.com/Valloric/YouCompleteMe"
 
-cd "$dir_ycm"
 git clone "$git_ycm" "$dir_ycm"
+cd "$dir_ycm"
 git submodule update --init --recursive
 ./install.py --clang-completer
-
-# .bashrc
-
-# .gitconfig
 
 cd
