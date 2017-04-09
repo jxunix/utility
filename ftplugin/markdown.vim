@@ -1,12 +1,13 @@
 "-------------------------------------------------------------------------------
 " Autocommands
 "-------------------------------------------------------------------------------
-autocmd FileType python nnoremap <silent><buffer> <F9> :call <sid>compileAndRun()<cr>
+autocmd FileType markdown nnoremap <silent><buffer> <F9>             :call <sid>codegen()<cr>
 
 "-------------------------------------------------------------------------------
 " Function Definition
 "-------------------------------------------------------------------------------
-func! <sid>compileAndRun()
+func! <sid>codegen()
     exec "w"
-    exec "!python %"
+    exec "!~/Documents/script/codegen.py % -o %<.h"
+    exec "e %<.h"
 endfunc

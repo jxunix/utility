@@ -6,6 +6,8 @@
     branch = auto
     interactive = auto
     diff = auto
+[core]
+	editor = vim
 [alias]
     br = branch
     ch = checkout
