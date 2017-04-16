@@ -23,6 +23,8 @@ apt install -y fcitx-googlepinyin
 apt install -y git
 apt install -y nautilus-dropbox
 apt install -y python-dev
+apt install -y python-numpy
+apt install -y python3-numpy
 apt install -y r-base
 apt install -y texlive-full
 apt install -y unrar
