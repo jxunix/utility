@@ -280,7 +280,7 @@ function! s:VStarsearch_searchVWord()
     let @" = savedUnnamed
 endfunction
 
-nnoremap <silent> * :call <SID>VStarsearch_searchCWord()<CR>:set hls<CR>
-vnoremap <silent> * :<C-u>call <SID>VStarsearch_searchVWord()<CR>:set hls<CR>
+nnoremap <silent> gd :call <SID>VStarsearch_searchCWord()<CR>:set hls<CR>
+vnoremap <silent> gd :<C-u>call <SID>VStarsearch_searchVWord()<CR>:set hls<CR>
 
 let &cpo = s:savedCpo
