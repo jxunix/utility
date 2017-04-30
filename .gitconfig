@@ -15,7 +15,7 @@
     re = remote -v
     st = status
     sy = "!git pull upstream master --tags; git push origin master;"
-    lg = log -10 --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
+    lg = log -20 --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
     ls = "!f() { \
         dir=$(pwd); \
         for d in ~/Documents/*; do \

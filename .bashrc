@@ -116,7 +116,7 @@ fi
 #-------------------------------------------------------------------------------
 export vimrc=~/.vimrc
 export bashrc=~/.bashrc
-export doc=~/Documents
+export code=~/Documents/code
 export dbox=~/Dropbox
 
 #-------------------------------------------------------------------------------
@@ -155,11 +155,11 @@ cd_aux() {
 #-------------------------------------------------------------------------------
 # Alias
 #-------------------------------------------------------------------------------
-for dir in ~/Documents/*; do
+for dir in ~/Documents/code/*; do
     [ -d "$dir" ] && alias $(basename "$dir")="cd $dir"
 done
 
-alias doc="cd $doc"
+alias code="cd $code"
 alias dbox="cd $dropbox"
 
 alias src="cd_aux src"
@@ -168,6 +168,7 @@ alias l="l_aux"
 alias la="l -A"
 alias ll="ls -l"
 alias llt="ll -t"
+alias lla="ll -a"
 
 alias v="vcc_aux"
 alias vi="vim"
