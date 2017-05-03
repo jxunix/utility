@@ -14,8 +14,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
