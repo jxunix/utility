@@ -169,6 +169,7 @@ alias la="l -A"
 alias ll="ls -l"
 alias llt="ll -t"
 alias lla="ll -a"
+alias lhead="llt | head"
 
 alias v="vcc_aux"
 alias vi="vim"
