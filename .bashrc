@@ -118,6 +118,10 @@ export vimrc=~/.vimrc
 export bashrc=~/.bashrc
 export code=~/Documents/code
 export dbox=~/Dropbox
+export tf_env=$code/tensorflow/bin/activate
+
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 #-------------------------------------------------------------------------------
 # Functions
@@ -181,6 +185,9 @@ alias gs="grep --include=\*.{h,cpp} -r"
 alias f="find * -name"
 
 alias update="sudo apt update; sudo apt dist-upgrade -y"
+
+alias tf="source $tf_env"
+alias exitf="deactivate"
 
 #-------------------------------------------------------------------------------
 # Settings

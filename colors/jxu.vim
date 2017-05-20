@@ -9,7 +9,7 @@ endif
 highlight ColorColumn               ctermbg=233
 highlight Comment       ctermfg=240
 highlight Constant      ctermfg=45
-highlight CursorLine    ctermfg=237 ctermbg=255 cterm=reverse
+highlight CursorLine    ctermfg=166 ctermbg=255 cterm=reverse
 highlight DiffAdd                   ctermbg=8
 highlight DiffDelete    ctermfg=8   ctermbg=0
 highlight DiffChange                ctermbg=0
