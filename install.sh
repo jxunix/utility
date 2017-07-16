@@ -48,7 +48,7 @@ while true; do
 done
 
 # .vimrc and .vim
-dir_utility="~/Documents/utility"
+dir_utility="/home/jun/Documents/utility"
 git_utility="https://github.com/jxunix/utility.git"
 
 git clone "$git_utility" "$dir_utility"
@@ -61,13 +61,13 @@ ln -sf "dir_utility"/.bashrc    ~/.bashrc
 ln -sf "dir_utility"/.gitconfig ~/.gitconfig
 
 # vundle
-dir_vundle="~/.vim/bundle/Vundle.vim"
+dir_vundle="/home/jun/.vim/bundle/Vundle.vim"
 git_vundle="https://github.com/gmarik/Vundle.vim.git" 
 
 git clone "$git_vundle" "$dir_vundle"
 
 # youcompleteme
-dir_ycm="~/.vim/bundle/YouCompleteMe"
+dir_ycm="/home/jun/.vim/bundle/YouCompleteMe"
 git_ycm="https://github.com/Valloric/YouCompleteMe"
 
 git clone "$git_ycm" "$dir_ycm"
