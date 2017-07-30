@@ -163,6 +163,10 @@ for dir in ~/Documents/code/*; do
     [ -d "$dir" ] && alias $(basename "$dir")="cd $dir"
 done
 
+for dir in ~/Documents/code/*; do
+    export $(basename "$dir")="$dir"
+done
+
 alias code="cd $code"
 alias dbox="cd $dropbox"
 
