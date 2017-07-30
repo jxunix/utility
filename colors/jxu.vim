@@ -18,7 +18,8 @@ highlight Error                     ctermbg=9
 highlight Function      ctermfg=40
 highlight Identifier    ctermfg=45              cterm=none
 highlight LineNr        ctermfg=240
-highlight Normal        ctermfg=253 ctermbg=232
+"highlight Normal        ctermfg=253 ctermbg=232
+highlight Normal        ctermfg=253
 highlight Number        ctermfg=45
 highlight Pmenu         ctermfg=250 ctermbg=235
 highlight PmenuSbar                 ctermbg=235
