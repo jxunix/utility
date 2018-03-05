@@ -1,11 +1,5 @@
-"-------------------------------------------------------------------------------
-" Autocommands
-"-------------------------------------------------------------------------------
-autocmd FileType python nnoremap <silent><buffer> <F9> :call <sid>compileAndRun()<cr>
+autocmd FileType python nnoremap <silent><F9> :call <sid>compileAndRun()<cr>
 
-"-------------------------------------------------------------------------------
-" Function Definition
-"-------------------------------------------------------------------------------
 func! <sid>compileAndRun()
     exec "w"
     exec "!python %"
