@@ -6,17 +6,18 @@
 ":PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 ":PluginSearch foo - searches for foo; append `!` to refresh local cache
 ":PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-let mapleader = "\\"
 
+let mapleader = "\\"
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 
 let g:ycm_key_list_select_completion   = [ '<c-n>', '<down>' ]
