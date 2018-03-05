@@ -15,5 +15,4 @@ Launch vim and run :PluginInstall
 4. File Descriptions: </br>
 	- .vimrc contains optional runtime configuration settings to initialize Vim when it starts.
 	- All \*.vim files in the ftplugin directory are configuration files for the corresponding programming languages; </br>
-		Now C++, Python, Shell and LaTeX are supported.
 	- install.sh is the shell script that installs necessary packages after installing the OS.
