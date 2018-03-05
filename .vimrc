@@ -105,7 +105,7 @@ set autoread
 set noswapfile
 
 " 20 COMMAND LINE EDITING
-set history=100
+set history=1000
 set wildmenu
 
 " 21 EXECUATING EXTERNAL COMMANDS
