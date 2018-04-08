@@ -111,8 +111,6 @@ set wildmenu
 " 21 EXECUATING EXTERNAL COMMANDS
 " 22 RUNNING MAKE AND JUMPING TO ERRORS
 " 23 LANGUAGE SPECIFIC
-set iskeyword+=-
-
 " 24 MULTI-BYTE CHARACTERS
 " 25 VARIOUS
 set encoding=utf-8
@@ -126,7 +124,7 @@ nnoremap K  <nop>
 nnoremap ZZ <nop>
 
 nnoremap Y y$
-nnoremap * gd
+"nnoremap * gd
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k

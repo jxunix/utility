@@ -111,31 +111,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#-------------------------------------------------------------------------------
-# Variables
-#-------------------------------------------------------------------------------
-export vimrc=~/.vimrc
-export bashrc=~/.bashrc
-export code=~/Documents/code
-export dbox=~/Dropbox
-export tf_env=$code/tensorflow/bin/activate
-
-export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
-#-------------------------------------------------------------------------------
-# Functions
-#-------------------------------------------------------------------------------
-l_aux() {
-    count=$(ls -1 "$@" | wc -l)
-    if [ "$count" -gt 30 ]
-    then
-        ls "$@"
-    else
-        ls -1 "$@"
-    fi
-}
-
+# FUNCTIONS
 vcc_aux() {
     if [ "${1:-1}" == "." ]; then
         vim -O $1{h,cpp}
@@ -156,28 +132,24 @@ cd_aux() {
     fi
 }
 
-#-------------------------------------------------------------------------------
-# Alias
-#-------------------------------------------------------------------------------
-for dir in ~/Documents/code/*; do
-    [ -d "$dir" ] && alias $(basename "$dir")="cd $dir"
-done
-
-for dir in ~/Documents/code/*; do
+# EXPORTS
+export vimrc=~/.vimrc
+export bashrc=~/.bashrc
+export code=~/Documents/code
+for dir in "$code"/*; do
     export $(basename "$dir")="$dir"
 done
 
+# ALIAS
 alias code="cd $code"
-alias dbox="cd $dropbox"
-
+for dir in "$code"/*; do
+    [ -d "$dir" ] && alias $(basename "$dir")="cd $dir"
+done
 alias src="cd_aux src"
 
-alias l="l_aux"
-alias la="l -A"
 alias ll="ls -l"
 alias llt="ll -t"
-alias lla="ll -a"
-alias lhead="llt | head"
+alias lla="ll -A"
 
 alias v="vcc_aux"
 alias vi="vim"
@@ -190,10 +162,4 @@ alias f="find * -name"
 
 alias update="sudo apt update; sudo apt dist-upgrade -y"
 
-alias tf="source $tf_env"
-alias exitf="deactivate"
-
-#-------------------------------------------------------------------------------
-# Settings
-#-------------------------------------------------------------------------------
 set -o vi

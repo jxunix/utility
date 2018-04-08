@@ -18,7 +18,7 @@
     lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
     ls = "!f() { \
         dir=$(pwd); \
-        for d in ~/Documents/code/*; do \
+        for d in "$code"/*; do \
             if [ "$d" -a -d "$d/.git" ]; then \
                 echo $(basename "$d"); cd "$d"; git br; \
             fi; \
