@@ -135,14 +135,14 @@ cd_aux() {
 # EXPORTS
 export vimrc=~/.vimrc
 export bashrc=~/.bashrc
-export code=~/Documents/code
-for dir in "$code"/*; do
+export doc=~/Documents
+for dir in "$doc"/*; do
     export $(basename "$dir")="$dir"
 done
 
 # ALIAS
-alias code="cd $code"
-for dir in "$code"/*; do
+alias doc="cd $doc"
+for dir in "$doc"/*; do
     [ -d "$dir" ] && alias $(basename "$dir")="cd $dir"
 done
 alias src="cd_aux src"
