@@ -16,7 +16,7 @@ pull:
 
 push:
 	git add -A
-	git co -m "update"
+	git cm "update"
 	git push origin master
 
 install:

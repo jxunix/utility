@@ -70,6 +70,7 @@ set ruler
 set report=0
 set confirm
 set noerrorbells
+set visualbell
 
 " 12 SELECTING TEXT
 set selection=exclusive
