@@ -71,3 +71,5 @@ alias update="sudo apt update -y; sudo apt dist-upgrade -y"
 # Variables
 #----------------------------------------------------------------------
 export PS1=$'\E[32;7m${HOSTNAME}\E[0m\E[32;1m:\W\E[0m\E[31;1m$(parse_git_branch)\E[0m \$ '
+
+set -o vi
