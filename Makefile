@@ -9,11 +9,11 @@ all: push
 
 pull:
 	git pull "${REPO}"
-	ln -sf  "${PWD}"/.bash_aliases  ~/.bash_aliases
-	ln -sf  "${PWD}"/.vimrc         ~/.vimrc
-	ln -sf  "${PWD}"/.gitconfig     ~/.gitconfig
-	ln -sfn "${PWD}"/ftplugin       ~/.vim/ftplugin
-	ln -sfn "${PWD}"/colors         ~/.vim/colors
+	ln -sf  "$pwd"/.bash_aliases  ~/.bash_aliases
+	ln -sf  "$pwd"/.vimrc         ~/.vimrc
+	ln -sf  "$pwd"/.gitconfig     ~/.gitconfig
+	ln -sfn "$pwd"/ftplugin       ~/.vim/ftplugin
+	ln -sfn "$pwd"/colors         ~/.vim/colors
 
 push:
 	git add -A
