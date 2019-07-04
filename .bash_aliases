@@ -9,7 +9,7 @@ alias vi="vim"
 # Variables
 #----------------------------------------------------------------------
 export vimrc=~/.vimrc
-export bashrc=~/.bashrc_ext
+export profile=~/.bash_aliases
 
 #----------------------------------------------------------------------
 # Functions
@@ -50,14 +50,16 @@ for dir in "$HOME"/*; do
 done
 
 alias src="cd_aux src"
+alias tst="cd_aux test"
+alias build="cd_aux build"
 
 alias ll="ls -l"
-alias la="ll -A"
+alias lla="ll -A"
 alias llt="ll -t"
 
 alias v="v_aux"
-alias sb="source $bashrc"
-alias vb="vim $bashrc"
+alias sp="source $profile"
+alias vp="vim $profile"
 alias vv="vim $vimrc"
 
 alias gs="clear; grep --include=\*.{cpp,h,cc,hh} --exclude=\*.t.{h,cpp} -nr"
