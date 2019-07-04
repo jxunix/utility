@@ -1,6 +1,6 @@
 # utility
 
-1. Set up Vundle </br>
+1. Set up `Vundle` </br>
 $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 2. Install plugin `YouCompleteMe` </br>
