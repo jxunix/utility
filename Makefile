@@ -3,16 +3,17 @@
 .PHONY: clean push pull install
 
 REPO="git@github.com:jxunix/utility.git"
+PWD=`pwd`
 
 all: push
 
 pull:
-	git pull ${REPO}
-	ln -sf  ~/utility/.bash_aliases  ~/.bash_aliases
-	ln -sf  ~/utility/.vimrc         ~/.vimrc
-	ln -sf  ~/utility/.gitconfig     ~/.gitconfig
-	ln -sfn ~/utility/ftplugin       ~/.vim/ftplugin
-	ln -sfn ~/utility/colors         ~/.vim/colors
+	git pull "$REPO"
+	ln -sf  "$PWD"/.bash_aliases  ~/.bash_aliases
+	ln -sf  "$PWD"/.vimrc         ~/.vimrc
+	ln -sf  "$PWD"/.gitconfig     ~/.gitconfig
+	ln -sfn "$PWD"/ftplugin       ~/.vim/ftplugin
+	ln -sfn "$PWD"/colors         ~/.vim/colors
 
 push:
 	git add -A
