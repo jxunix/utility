@@ -3,7 +3,7 @@
 .PHONY: clean push pull install
 
 REPO="git@github.com:jxunix/utility.git"
-PWD=`pwd`
+PWD=$(echo `pwd`)
 
 all: push
 
