@@ -18,9 +18,9 @@
     lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
     ls = "!f() { \
         dir=$(pwd); \
-        for d in "$code"/*; do \
-            if [ "$d" -a -d "$d/.git" ]; then \
-                echo $(basename "$d"); cd "$d"; git br; \
+        for d in ~/*; do \
+            if [ -d "$d" -a -d "$d/.git" ]; then \
+                { cd "$d"; echo -n $(basename `pwd`); echo -n '\t-> '; echo -e \"\\033[0;33m$(git rev-parse --abbrev-ref HEAD)\\033[0m\"; } \
             fi; \
         done; \
         cd "$dir"; \
