@@ -2,8 +2,8 @@
 
 .PHONY: clean push pull install
 
-REPO="git@github.com:jxunix/utility.git"
-mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+REPO = "git@github.com:jxunix/utility.git"
+mkfile_path := $(dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 
 all: push
 
