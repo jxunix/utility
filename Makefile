@@ -8,12 +8,12 @@ PWD=`pwd`
 all: push
 
 pull:
-	git pull "$REPO"
-	ln -sf  "$PWD"/.bash_aliases  ~/.bash_aliases
-	ln -sf  "$PWD"/.vimrc         ~/.vimrc
-	ln -sf  "$PWD"/.gitconfig     ~/.gitconfig
-	ln -sfn "$PWD"/ftplugin       ~/.vim/ftplugin
-	ln -sfn "$PWD"/colors         ~/.vim/colors
+	git pull "${REPO}"
+	ln -sf  "${PWD}"/.bash_aliases  ~/.bash_aliases
+	ln -sf  "${PWD}"/.vimrc         ~/.vimrc
+	ln -sf  "${PWD}"/.gitconfig     ~/.gitconfig
+	ln -sfn "${PWD}"/ftplugin       ~/.vim/ftplugin
+	ln -sfn "${PWD}"/colors         ~/.vim/colors
 
 push:
 	git add -A
