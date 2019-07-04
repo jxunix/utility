@@ -3,17 +3,17 @@
 .PHONY: clean push pull install
 
 REPO = "git@github.com:jxunix/utility.git"
-mkfile_path := $(dirname $(abspath $(lastword $(MAKEFILE_LIST))))
+ROOT = $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 
 all: push
 
 pull:
 	git pull ${REPO}
-	ln -sf  ~/utility/.bash_aliases  ~/.bash_aliases
-	ln -sf  ~/utility/.vimrc         ~/.vimrc
-	ln -sf  ~/utility/.gitconfig     ~/.gitconfig
-	ln -sfn ${mkfile_path}/ftplugin       ~/.vim/ftplugin
-	ln -sfn ~/utility/colors         ~/.vim/colors
+	ln -sf  ${ROOT}/.bash_aliases  ~/.bash_aliases
+	ln -sf  ${ROOT}/.vimrc         ~/.vimrc
+	ln -sf  ${ROOT}/.gitconfig     ~/.gitconfig
+	ln -sfn ${ROOT}/ftplugin       ~/.vim/ftplugin
+	ln -sfn ${ROOT}/colors         ~/.vim/colors
 
 push:
 	git add -A
