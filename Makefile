@@ -8,11 +8,11 @@ all: push
 
 pull:
 	git pull ${REPO}
-	ln -sf  ./.bashrc_aliases ~/.bashrc_aliases
-	ln -sf  ./.vimrc          ~/.vimrc
-	ln -sf  ./.gitconfig      ~/.gitconfig
-	ln -sfn ./ftplugin        ~/.vim/ftplugin
-	ln -sfn ./colors          ~/.vim/colors
+	ln -sf  ~/utility/.bash_aliases  ~/.bash_aliases
+	ln -sf  ~/utility/.vimrc         ~/.vimrc
+	ln -sf  ~/utility/.gitconfig     ~/.gitconfig
+	ln -sfn ~/utility/ftplugin       ~/.vim/ftplugin
+	ln -sfn ~/utility/colors         ~/.vim/colors
 
 push:
 	git add -A
