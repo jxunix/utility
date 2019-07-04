@@ -65,7 +65,7 @@ alias vv="vim $vimrc"
 alias gs="clear; grep --include=\*.{cpp,h,cc,hh} --exclude=\*.t.{h,cpp} -nr"
 alias f="find * -name"
 alias tag="ctags -R *"
-alias upadte="sudo apt update -y; sudo apt dist-upgrade -y"
+alias update="sudo apt update -y; sudo apt dist-upgrade -y"
 
 #----------------------------------------------------------------------
 # Variables
