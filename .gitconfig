@@ -20,6 +20,7 @@
         dir=$(pwd); \
         for d in ~/*; do \
             if [ -d "$d" -a -d "$d/.git" ]; then \
+                cd "$d" && \
                 printf "%-8s" "$(basename "$d")" && \
                 echo \" -> \\033[0;33m$(git rev-parse --abbrev-ref HEAD)\\033[0m\"; \
             fi; \
