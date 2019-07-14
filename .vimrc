@@ -24,9 +24,11 @@ let g:ycm_key_list_select_completion   = [ '<c-n>', '<down>' ]
 let g:ycm_key_list_previous_completion = [ '<c-p>', '<up>'   ]
 let g:SuperTabDefaultCompletionType    = '<c-n>'
 
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:UltiSnipsExpandTrigger       = '<tab>'
+let g:UltiSnipsJumpForwardTrigger  = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+let g:clang_format#detect_style_file = 1
 
                                             "--------
                                             " OPTIONS
