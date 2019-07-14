@@ -2,13 +2,12 @@
 
 .PHONY: pull push config install
 
-REPO = "git@github.com:jxunix/utility.git"
 ROOT = $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 
 all: push
 
 pull:
-	git pull ${REPO}
+	git pull origin master
 
 push:
 	git add -A
