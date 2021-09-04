@@ -67,6 +67,8 @@ alias f="find * -name"
 alias tag="ctags -R *"
 alias update="sudo apt update -y; sudo apt dist-upgrade -y"
 
+alias nb='jupyter notebook'
+
 #----------------------------------------------------------------------
 # Settings
 #----------------------------------------------------------------------
