@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------
 # Renaming
 #----------------------------------------------------------------------
-alias ls="ls --color=always"
+alias ls="ls --color=always --group-directories-first"
 alias grep="grep --color=always"
 alias vi="vim"
 
@@ -10,22 +10,11 @@ alias vi="vim"
 #----------------------------------------------------------------------
 export vimrc=~/.vimrc
 export profile=~/.bash_aliases
+export gitconfig=~/.gitconfig
 
 #----------------------------------------------------------------------
 # Functions
 #----------------------------------------------------------------------
-v_aux() {
-    if [ "${1: -1}" == "." ]; then
-        vim -O $1{h,cpp}
-    elif [ "${1: -4}" == ".cpp" ]; then
-        vim "$1"
-    elif [ "${1: -2}" == ".h" ]; then
-        vim "$1"
-    else
-        vim -O $1.{h,cpp}
-    fi
-}
-
 cd_aux() {
     if [ -d ../"$1" ]; then
         cd ../"$1"
@@ -38,31 +27,33 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+swap() {
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
+}
+
 #----------------------------------------------------------------------
 # Alias
 #----------------------------------------------------------------------
-for dir in "$HOME"/*; do
+for dir in "$HOME"/Documents/*; do
     [ -d "$dir" ] && alias $(basename "$dir")="cd $dir"
 done
 
-for dir in "$HOME"/*; do
+for dir in "$HOME"/Documents/*; do
     [ -d "$dir" ] && export $(basename "$dir")="$dir"
 done
-
-alias src="cd_aux src"
-alias tst="cd_aux test"
-alias build="cd_aux build"
 
 alias ll="ls -l"
 alias lla="ll -A"
 alias llt="ll -t"
 
-alias v="v_aux"
 alias sp="source $profile"
 alias vp="vim $profile"
 alias vv="vim $vimrc"
+alias vg="vim $gitconfig"
 
-alias gs="clear; grep --include=\*.{cpp,h,cc,hh} --exclude=\*.t.{h,cpp} -nr"
+alias gs="clear; grep --include=\*.{cpp,h,cc,hh} --exclude=\*.t.{h,cpp}"
+alias gy="clear; grep --include=\*.py --exclude-dir={venv,.venv}"
 alias f="find * -name"
 alias tag="ctags -R *"
 alias update="sudo apt update -y; sudo apt dist-upgrade -y"

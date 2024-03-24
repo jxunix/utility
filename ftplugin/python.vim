@@ -1,6 +1,6 @@
-autocmd FileType python nnoremap <silent><F9> :call <sid>run()<cr>
+                                         "------------
+                                         " AUTOCOMMAND
+                                         "------------
 
-func! <sid>run()
-    exec "w"
-    exec "!python %"
-endfunc
+autocmd FileType python setlocal textwidth=80
+autocmd FileType python let &colorcolumn=join(range(81, 300), ",")

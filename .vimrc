@@ -13,19 +13,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 call vundle#end()
-
-let g:ycm_key_list_select_completion   = [ '<c-n>', '<down>' ]
-let g:ycm_key_list_previous_completion = [ '<c-p>', '<up>'   ]
-let g:SuperTabDefaultCompletionType    = '<c-n>'
-
-let g:UltiSnipsExpandTrigger       = '<tab>'
-let g:UltiSnipsJumpForwardTrigger  = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
                                             "--------
                                             " OPTIONS
@@ -39,6 +28,8 @@ set pastetoggle=<F3>
 set whichwrap=b,s,<,>,[,]
 set incsearch
 set magic
+set ignorecase
+set smartcase
 
 " 3 TAGES
 " 4 DISPLAYING TEXT
@@ -124,7 +115,7 @@ nnoremap K  <nop>
 nnoremap ZZ <nop>
 
 nnoremap Y y$
-"nnoremap * gd
+" nnoremap * gd
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -210,10 +201,13 @@ for f in split(glob('~/.vim/ftplugin/*.vim'), '\n')
     exe 'source' f
 endfor
 
+if &diff
+    set diffopt+=iwhite
+endif
+
                                               "----
                                               " GUI
                                               "----
 
 set t_Co=256
-let &colorcolumn=join(range(101, 300), ",")
 colorscheme jxu

@@ -9,23 +9,27 @@
 [core]
 	editor = vim
 [alias]
-    br = branch
     ch = checkout
+
     cm = commit -m
+    acm = "!git add -A; git commit -m"
+
     re = remote -v
+    br = branch
     st = status
-    sy = "!git pull upstream master --tags; git push origin master;"
     lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
     ls = "!f() { \
         dir=$(pwd); \
-        for d in ~/*; do \
+        for d in ~/Documents/*; do \
             if [ -d "$d" -a -d "$d/.git" ]; then \
-                cd "$d" && \
-                printf "%-8s" "$(basename "$d")" && \
-                echo \" -> \\033[0;33m$(git rev-parse --abbrev-ref HEAD)\\033[0m\"; \
+                { cd "$d"; printf \"%-12s-> \\033[0;33m%-50s\\033[0m\n\" $(basename `pwd`) $(git rev-parse --abbrev-ref HEAD); } \
             fi; \
         done; \
         cd "$dir"; \
     }; f;"
+
     d  = diff --name-only origin/master...HEAD
     df = diff origin/master...HEAD --
+
+    si = stash push
+    so = stash pop
